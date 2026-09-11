@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتبة فكرة | أبو أحمد</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #120e0a;
+            background-image: 
+                radial-gradient(circle at 50% 15%, rgba(212, 175, 55, 0.28) 0%, transparent 55%),
+                linear-gradient(135deg, #1f1610 0%, #0a0705 100%),
+                radial-gradient(rgba(212, 175, 55, 0.05) 1.5px, transparent 1.5px);
+            background-size: 100% 100%, 100% 100%, 24px 24px;
+            color: #fff8ee;
+            font-family: 'Cairo', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .card-container {
+            width: 100%;
+            max-width: 420px;
+            padding: 45px 25px;
+            border: 2px solid #d4af37;
+            border-radius: 36px;
+            background: rgba(20, 14, 10, 0.96);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9), 0 0 50px rgba(212, 175, 55, 0.2);
+            text-align: center;
+            position: relative;
+            backdrop-filter: blur(12px);
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .logo-box {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 24px auto;
+            border: 2px solid #d4af37;
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #2c2014 0%, #0c0805 100%);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.45), inset 0 0 15px rgba(212, 175, 55, 0.2);
+            position: relative;
+            transform: rotate(45deg);
+            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .logo-box:hover {
+            transform: rotate(0deg) scale(1.08);
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.7);
+        }
+
+        .logo-inner {
+            transform: rotate(-45deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #d4af37;
+            font-size: 40px;
+            transition: 0.5s;
+        }
+
+        .logo-box:hover .logo-inner {
+            transform: rotate(0deg);
+            color: #fff;
+            text-shadow: 0 0 15px #d4af37;
+        }
+
+        h1 {
+            color: #d4af37;
+            font-size: 30px;
+            font-weight: 900;
+            margin-bottom: 4px;
+            letter-spacing: 1.5px;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+        }
+        
+        .subtitle {
+            color: #d2c3a9;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 15px;
+        }
+
+        .action-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 16px 22px;
+            margin: 14px 0;
+            background: linear-gradient(135deg, #2b1f15 0%, #0f0a06 100%);
+            border: 1px solid rgba(212, 175, 55, 0.45);
+            color: #fff8ee;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            border-radius: 18px;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .action-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .action-btn:hover::before {
+            right: 100%;
+        }
+
+        .action-btn i.icon-left {
+            color: #d4af37;
+            font-size: 20px;
+            width: 25px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .action-btn span {
+            flex-grow: 1;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+
+        .action-btn i.arrow {
+            color: #8c7a60;
+            font-size: 12px;
+            transition: 0.3s;
+        }
+
+        .action-btn:hover {
+            background: linear-gradient(135deg, #d4af37 0%, #aa8c2c 100%);
+            color: #0c0805;
+            border-color: #fff;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.7);
+            transform: translateY(-4px);
+        }
+        
+        .action-btn:hover i.icon-left,
+        .action-btn:hover i.arrow {
+            color: #0c0805;
+        }
+
+        .footer-note {
+            margin-top: 25px;
+            font-size: 11px;
+            color: #8c7a60;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        <!-- اللوجو -->
+        <div class="logo-box">
+            <div class="logo-inner">
+                <i class="fa-solid fa-lightbulb"></i>
+            </div>
+        </div>
+
+        <h1>مكتبة فكرة</h1>
+        <div class="subtitle">إدارة أبو أحمد</div>
+
+        <!-- أزرار التواصل -->
+        <a href="https://wa.me/201288373989" class="action-btn" target="_blank">
+            <i class="fa-brands fa-whatsapp icon-left" style="color: #25d366;"></i>
+            <span>تواصل عبر الواتساب</span>
+            <i class="fa-solid fa-chevron-left arrow"></i>
+        </a>
+
+        <a href="tel:01288373989" class="action-btn">
+            <i class="fa-solid fa-phone-volume icon-left" style="color: #d4af37;"></i>
+            <span>الاتصال المباشر</span>
+            <i class="fa-solid fa-chevron-left arrow"></i>
+        </a>
+
+        <a href="#" id="saveContactBtn" class="action-btn">
+            <i class="fa-solid fa-address-book icon-left" style="color: #4da6ff;"></i>
+            <span>حفظ الرقم في جهات الاتصال</span>
+            <i class="fa-solid fa-chevron-left arrow"></i>
+        </a>
+
+        <a href="https://maps.google.com/?q=مكتبة+فكرة" class="action-btn" target="_blank">
+            <i class="fa-solid fa-location-dot icon-left" style="color: #ff4d4d;"></i>
+            <span>موقعنا على الخريطة (GPS)</span>
+            <i class="fa-solid fa-chevron-left arrow"></i>
+        </a>
+
+        <a href="رابط_صفحة_التقييم_مباشرة" class="action-btn" target="_blank">
+            <i class="fa-solid fa-star icon-left" style="color: #ffcc00;"></i>
+            <span>قيمنا على جوجل ماب</span>
+            <i class="fa-solid fa-chevron-left arrow"></i>
+        </a>
+
+        <div class="footer-note">تحت أمركم دائماً</div>
+    </div>
+
+    <script>
+        document.getElementById('saveContactBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            const vcard = 
+`BEGIN:VCARD
+VERSION:3.0
+FN:مكتبة فكرة - أبو أحمد
+TEL;TYPE=CELL:01288373989
+END:VCARD`;
+
+            const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+            const url = window.URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Fikra_Library.vcf';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        });
+    </script>
+
+</body>
+</html>
