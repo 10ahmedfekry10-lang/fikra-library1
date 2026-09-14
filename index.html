@@ -98,11 +98,30 @@
             color: #d2c3a9;
             font-size: 13px;
             font-weight: 600;
-            margin-bottom: 30px;
+            margin-bottom: 12px;
             letter-spacing: 3px;
             text-transform: uppercase;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            padding-bottom: 15px;
+        }
+
+        .address-box {
+            background: rgba(212, 175, 55, 0.08);
+            border: 1px dashed rgba(212, 175, 55, 0.35);
+            border-radius: 14px;
+            padding: 10px 14px;
+            margin-bottom: 25px;
+            color: #e6d3a7;
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1.6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .address-box i {
+            color: #d4af37;
+            font-size: 15px;
         }
 
         .action-btn {
@@ -195,6 +214,12 @@
         <h1>مكتبة فكرة</h1>
         <div class="subtitle">إدارة أبو أحمد</div>
 
+        <!-- صندوق العنوان التفصيلي -->
+        <div class="address-box">
+            <i class="fa-solid fa-map-pin"></i>
+            <span>شارع كامل النجار - المتفرع من شارع وادي النيل</span>
+        </div>
+
         <!-- أزرار التواصل -->
         <a href="https://wa.me/201288373989" class="action-btn" target="_blank">
             <i class="fa-brands fa-whatsapp icon-left" style="color: #25d366;"></i>
@@ -214,8 +239,8 @@
             <i class="fa-solid fa-chevron-left arrow"></i>
         </a>
 
-        <!-- رابط المكان المباشر بدون بحث -->
-        <a href="https://www.google.com/maps/search/?api=1&query=%Dمكتبة+فكرة+الزقازيق&query_place_id=ChIJQbAnNgDx9xQRzmYHUBXz9y0" class="action-btn" target="_blank">
+        <!-- رابط المكان المباشر -->
+        <a href="https://www.google.com/maps/search/?api=1&query=%D9%85%D9%83%D8%AA%D8%A8%D8%A9+%D9%81%D9%83%D8%B1%D8%A9+%D8%A7%D9%84%D8%B2%D9%82%D8%A7%D8%B2%D9%8A%D9%82&query_place_id=ChIJQbAnNgDx9xQRzmYHUBXz9y0" class="action-btn" target="_blank">
             <i class="fa-solid fa-location-dot icon-left" style="color: #ff4d4d;"></i>
             <span>موقعنا على الخريطة (GPS)</span>
             <i class="fa-solid fa-chevron-left arrow"></i>
@@ -239,6 +264,7 @@
 VERSION:3.0
 FN:مكتبة فكرة - أبو أحمد
 TEL;TYPE=CELL:01288373989
+ADR;TYPE=WORK:;;شارع كامل النجار المتفرع من شارع وادي النيل;;;;
 END:VCARD`;
 
             const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
